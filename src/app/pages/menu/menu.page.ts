@@ -12,11 +12,9 @@ export class MenuPage implements OnInit {
   constructor(private storage: Storage, private router: Router) { }
 
   ngOnInit() {
-    console.log('here')
   }
 
   quitApp(){
-    console.log('here')
     this.storage.set('seen-intro', false);
     this.router.navigateByUrl('/intro')
   }

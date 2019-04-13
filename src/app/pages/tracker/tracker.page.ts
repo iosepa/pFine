@@ -47,14 +47,14 @@ export class TrackerPage implements OnInit {
   }
 
   async loadTransactions() {
-    this.storage.get('selected-currency').then(cur =>
+    await this.storage.get('selected-currency').then(cur =>
       this.selectedCurrency = cur.toUpperCase());
     await this.cashService.getTransactions().then(trans => {
       this.transactions = trans;
       this.allTransactions = trans;
     });
     this.updateCashflow();
-    console.table(this.transactions)
+    //console.table(this.transactions)
   }
 
   async removeTransaction(i) {
@@ -67,7 +67,8 @@ export class TrackerPage implements OnInit {
   updateCashflow() {
     let result: number = 0;
     this.transactions.map(a => {
-      result += parseFloat(a.type == CashFlow.Expense ? -a.value : a.value);
+      result += a.type == CashFlow.Expense ? - +a.value : +a.value;
+
     })
     this.cashFlow = result;
   }
