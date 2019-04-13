@@ -1,5 +1,7 @@
 {
   "name": "pFinance",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

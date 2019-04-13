@@ -1,0 +1,46 @@
+<ion-content>
+  <ion-slides pager="true" #slides>
+
+    <ion-slide>
+      <h1>Welcome to your finances </h1>
+      <p>It's fine. It's prefectly fine.</p>
+      <ion-button expand="button" color="light" (click)="next()">
+        Configure
+      </ion-button>
+    </ion-slide>
+    <ion-slide>
+      <h1>Setup pFine App </h1>
+
+      <ion-list>
+        <ion-radio-group [(ngModel)]="currency">
+          <ion-list-header>Currency</ion-list-header>
+          <ion-item>
+            <ion-label>Euro</ion-label>
+            <ion-radio slot="start" value="eur"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>USD</ion-label>
+            <ion-radio slot="start" value="usd"></ion-radio>
+          </ion-item>
+
+
+          <ion-item>
+            <ion-label>Yen</ion-label>
+            <ion-radio slot="start" value="jpy"></ion-radio>
+          </ion-item>
+
+
+        </ion-radio-group>
+
+      </ion-list>
+
+      <ion-button expand="button" color="light" (click)="saveAndStart()">
+        Let's go!
+      </ion-button>
+    </ion-slide>
+
+
+  </ion-slides>
+
+</ion-content>
