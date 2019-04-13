@@ -13,12 +13,14 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { IonicStorageModule } from '@ionic/storage';
 import { CashService } from './services/cash.service';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, 
-    IonicStorageModule.forRoot(), CashFlowModalPageModule, FilterPopoverPageModule ],
+    IonicStorageModule.forRoot(), CashFlowModalPageModule, FilterPopoverPageModule, ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }) ],
   providers: [CashService,
     StatusBar,
     SplashScreen,
