@@ -73,16 +73,16 @@ export class TrackerPage implements OnInit {
     this.cashFlow = result;
   }
 
-  async openFilters(e){
+  async openFilters(e) {
     const popover = await this.popOverCtrl.create({
       component: FilterPopoverPage,
-      event: e,  
+      event: e,
     })
     await popover.present();
 
     popover.onDidDismiss().then(res => {
       if (res && res.data) {
-        if (res.data.selected.name == 'All'){
+        if (res.data.selected.name == 'All') {
           this.transactions = this.allTransactions;
         }
         else {
